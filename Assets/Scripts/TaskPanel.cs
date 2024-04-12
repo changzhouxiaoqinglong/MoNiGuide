@@ -136,7 +136,62 @@ public class TaskPanel : MonoBehaviour
         InitTaskDropDown();
         InitSceneDropDown();
         InitWeatherDropDown();
+        sceneDropDown.onValueChanged.AddListener(OnSceneChaneged);
+        carPos.text = "29.15237,88.64471,0";
+        fuShePos.text = "29.15584,88.64548,0";
+        drugPos.text = "29.15997,88.65074,0";
+        craterPos.text = "29.16168,88.65231,0";
     }
+
+    void OnSceneChaneged(int index)
+	{
+		switch(index)
+		{
+            case 0:
+                carPos.text = "29.15237,88.64471,0";
+                fuShePos.text = "29.15584,88.64548,0";
+                drugPos.text = "29.15997,88.65074,0";
+                craterPos.text = "29.16168,88.65231,0";
+                break;
+
+            case 1:
+                carPos.text = "35.56856,114.3004,0";
+                fuShePos.text = "35.56771,114.3015,0";
+                drugPos.text = "35.56777,114.2996,0";
+                craterPos.text = "35.56745,114.2933,0";
+                break;
+            case 2:
+                carPos.text = "23.59842,106.633,0";
+                fuShePos.text = "23.59421,106.6283,0";
+                drugPos.text = "23.59421,106.6194,0";
+                craterPos.text = "23.59182,106.6194,0";
+                break;
+            case 3:
+                carPos.text = "29.88665,93.59372,0";
+                fuShePos.text = "29.88556,93.59334,0";
+                drugPos.text = "29.88556,93.59446,0";
+                craterPos.text = "29.88681,93.59628,0";
+                break;
+            case 4:
+                carPos.text = "0,0,0";
+                fuShePos.text = "0,0,0";
+                drugPos.text = "0,0,0";
+                craterPos.text = "0,0,0";
+                break;
+            case 5:
+                carPos.text = "0,0,0";
+                fuShePos.text = "0,0,0";
+                drugPos.text = "0,0,0";
+                craterPos.text = "0,0,0";
+                break;
+            case 6:
+                carPos.text = "0,0,0";
+                fuShePos.text = "0,0,0";
+                drugPos.text = "0,0,0";
+                craterPos.text = "0,0,0";
+                break;
+        }
+	}
 
     private void OnEnable()
     {
