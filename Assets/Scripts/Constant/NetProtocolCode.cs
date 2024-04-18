@@ -88,6 +88,12 @@ public class NetProtocolCode
     public const int POWER_OP = 2041;
 
     /// <summary>
+    /// 操作电台
+    /// </summary>
+    public const int RadioStation_OP = 2071;
+    
+
+    /// <summary>
     /// 操作北斗
     /// </summary>
     public const int BEIDOU_OP = 2051;
@@ -234,6 +240,11 @@ public class NetProtocolCode
     public const int POWER_102 = 10251;
 
     /// <summary>
+    /// 操作电台
+    /// </summary>
+    public const int RadioStation_OP_102 = 10271;
+
+    /// <summary>
     /// 气象器件
     /// </summary>
     public const int METEOR_102 = 10261;
@@ -242,6 +253,8 @@ public class NetProtocolCode
     /// 车内温湿度
     /// </summary>
     public const int CAR_WET_TEM = 10262;
+
+    
     #endregion
 
     #region 384车协议
@@ -274,6 +287,11 @@ public class NetProtocolCode
     /// 操作电源
     /// </summary>
     public const int POWER_OP_384 = 38431;
+
+    /// <summary>
+    /// 操作电台
+    /// </summary>
+    public const int RadioStation_OP_384 = 38471;
     #endregion
 
     #region 106车协议
@@ -310,6 +328,17 @@ public class NetProtocolCode
     /// 106毒剂报警器训练流程  可控状态设置
     /// </summary>
     public const int POISON_ALARM_STAT_CTR_106 = 10612;
+
+    /// <summary>
+    /// 106操作电台
+    /// </summary>
+    public const int RadioStation_OP_106 = 10671;
+
+    /// <summary>
+    /// 设置减压阀数据
+    /// </summary>
+    public const int SET_SetReliefThreshold = 10681;
+
     #endregion
 
     #region 客户端的消息转发给导控
@@ -414,6 +443,8 @@ public class NetProtocolCode
             RADIOME_OP,
             //操作电源
             POWER_OP,
+              //操作电台
+            RadioStation_OP,
             //操作北斗
             BEIDOU_OP,
             //操作气象
@@ -424,6 +455,7 @@ public class NetProtocolCode
             POISON_IN_STATUS,
             SET_RADIOM_RATE_THRESHOLD,
             SET_TT_RADIOM_RATE_THRESHOLD,
+            SET_CAR_POIS_GAS_TIME,
             CAR_RADIOM_OP_102,
             SET_RADIOM_RATE_THRESHOLD_102,
             SET_TT_RADIOM_TOTAL_102,
@@ -438,6 +470,7 @@ public class NetProtocolCode
             INFARED_TELEMETRY_102,
             INFARED_TELEMETRY_PARAM_102,
             POWER_102,
+            RadioStation_OP_102,
             METEOR_102,
             CAR_WET_TEM,
             RADIOME_OP_384,
@@ -446,14 +479,18 @@ public class NetProtocolCode
             POISON_ALARM_OP_384,
             POISON_ALARM_WORK_TYPE_384,
             POWER_OP_384,
+            RadioStation_OP_384,
             POWER_OP_106,
+            RadioStation_OP_106,
+            SET_SetReliefThreshold,
             RADIOME_OP_106,
             SET_RADIOM_RATE_THRESHOLD_106,
             SET_TT_RADIOM_RATE_THRESHOLD_106,
             POISON_ALARM_OP_106,
             Biology_OP_106,
             SET_Biology_RATE_THRESHOLD_106,
-            POISON_ALARM_STAT_CTR_106
+            POISON_ALARM_STAT_CTR_106,    
+           
         };
 
     /// <summary>

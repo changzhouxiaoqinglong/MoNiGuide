@@ -172,12 +172,14 @@ namespace TcpServer.Servers
         private void HandleClientMsgForward(NetData data)
         {
        
-            if (NetProtocolCode.IsNeedForwardClientToGuide(data.ProtocolCode))
-            {
-                //转发消息
-                //  NetManager.GetInstance().guideClient.SendMsg(data);//就是发给自己
+            //if (NetProtocolCode.IsNeedForwardClientToGuide(data.ProtocolCode))
+            //{
+            //    //转发消息
+            //    //  NetManager.GetInstance().guideClient.SendMsg(data);//就是发给自己
               
-            }
+            //}
+
+
    //         if(data.ProtocolCode==2)
 			//{
    //             UnityEngine.Debug.Log("!!!!!!!!!!!!!!!!!" );

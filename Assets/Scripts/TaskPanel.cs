@@ -137,6 +137,8 @@ public class TaskPanel : MonoBehaviour
         InitSceneDropDown();
         InitWeatherDropDown();
         sceneDropDown.onValueChanged.AddListener(OnSceneChaneged);
+
+        return;
         carPos.text = "29.15237,88.64471,0";
         fuShePos.text = "29.15584,88.64548,0";
         drugPos.text = "29.15997,88.65074,0";
