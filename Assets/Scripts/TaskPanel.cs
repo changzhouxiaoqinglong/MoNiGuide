@@ -355,7 +355,7 @@ public class TaskPanel : MonoBehaviour
                     SeatId = user.SeatId,
                     MachineId = user.MachineId,
                 };
-                trainMachineData.TrainUserData.Add(userData);
+                trainMachineData.TrainUserDatas.Add(userData);
             }
             trainMachineDatas.Add(trainMachineData);
         }

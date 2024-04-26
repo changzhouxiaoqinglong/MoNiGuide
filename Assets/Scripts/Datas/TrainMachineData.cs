@@ -24,5 +24,5 @@ public class TrainMachineData
     /// <summary>
     /// 该车参加训练的 席位数据
     /// </summary>
-    public  List<TrainSeatData> TrainUserData = new List<TrainSeatData>();
+    public  List<TrainSeatData> TrainUserDatas = new List<TrainSeatData>();
 }
