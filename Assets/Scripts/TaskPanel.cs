@@ -289,12 +289,12 @@ public class TaskPanel : MonoBehaviour
         {
             TaskId = TaskDataMgr.GetInstance().dataList[taskDropDown.value].Id,
             Scene = SceneDataMgr.GetInstance().dataList[sceneDropDown.value].Id,
-            Weather = WeatherDataMgr.GetInstance().dataList[weatherDropDown.value].Id,
-            WindDir = winDir.text.ToInt(),
-            WindSp = winSp.text.ToInt(),
-            Temperate = temperate.text.ToInt(),
-            Humidity = wet.text.ToInt(),
-            CardPos = carVect,
+          //  Weather = WeatherDataMgr.GetInstance().dataList[weatherDropDown.value].Id,
+           // WindDir = winDir.text.ToInt(),
+           // WindSp = winSp.text.ToInt(),
+           // Temperate = temperate.text.ToInt(),
+          //  Humidity = wet.text.ToInt(),
+            //CardPos = carVect,
             TrainId = trainId.text.ToInt(),
             CheckType = modeDropDown.value,
             Time = DateTime.Now.ToString("yyyyMMddHHmmss"),
@@ -332,7 +332,8 @@ public class TaskPanel : MonoBehaviour
 
     private void OnClickStartTrain(GameObject obj)
     {
-        string[] carPoses = carPos.text.Split(',');
+
+    string[] carPoses = carPos.text.Split(',');
         CustVect3 carVect = new CustVect3(carPoses[0].ToFloat(), carPoses[1].ToFloat(), carPoses[2].ToFloat());
 
         //所有车数据
@@ -344,7 +345,7 @@ public class TaskPanel : MonoBehaviour
             {
                 MachineId = item.Key,
                 InitPos = carVect,
-                CarId = item.Value[0].CarId,
+                CarId = item.Value[0].CarId,//device carid是0 所以不能先启动
             };
             //生成该机号对应的人数据
             foreach (var user in item.Value)
@@ -354,7 +355,7 @@ public class TaskPanel : MonoBehaviour
                     SeatId = user.SeatId,
                     MachineId = user.MachineId,
                 };
-                trainMachineData.TrainSeatDatas.Add(userData);
+                trainMachineData.TrainUserData.Add(userData);
             }
             trainMachineDatas.Add(trainMachineData);
         }

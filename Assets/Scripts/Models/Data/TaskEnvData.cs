@@ -54,7 +54,7 @@ public class TaskEnvData
     /// <summary>
     /// 天气
     /// </summary>
-    public int Weather;
+   // public int Weather;
 
     /// <summary>
     /// 风向

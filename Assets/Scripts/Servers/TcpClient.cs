@@ -43,15 +43,7 @@ namespace TcpServer.Servers
         /// </summary>
         public User user=new User() ;
 
-        /// <summary>
-        /// 接收客户端传来的消息 逻辑处理字典
-        /// </summary>
-        private Dictionary<int, Action<NetData>> revClientMsgDic = new Dictionary<int, Action<NetData>>();
-
-        /// <summary>
-        /// 发送消息给客户端 逻辑处理字典
-        /// </summary>
-        private Dictionary<int, Action<NetData>> sendClientMsgDic = new Dictionary<int, Action<NetData>>();
+        
 
         public TcpClient(Socket clientSocket, TcpServer server)
         {
@@ -67,24 +59,7 @@ namespace TcpServer.Servers
            // InitMsgHandleDic();
         }
 
-        private void InitMsgHandleDic()
-        {
-            //找到对应属性的方法
-            Dictionary<NetMsgHandleAttribute, MethodInfo> atrributeMethodDic = AttributeTools.GetAttributeMethods<NetMsgHandleAttribute>(this);
-            foreach (var item in atrributeMethodDic)
-            {
-                //根据revClientMsgDic value的委托类型 来创建对应方法的委托对象
-                var handle = item.Value.CreateDelegate(typeof(Action<NetData>), this) as Action<NetData>;
-                if (item.Key.IsReceive)
-                {
-                    revClientMsgDic.Add(item.Key.ProtocolCode, handle);
-                }
-                else
-                {
-                    sendClientMsgDic.Add(item.Key.ProtocolCode, handle);
-                }
-            }
-        }
+       
 
         /// <summary>
         /// 发送消息
@@ -110,10 +85,7 @@ namespace TcpServer.Servers
            Logger.LogDebug("SendMsg:" + sendStr);
            // Logger.LogWarning("SendMsg ProtocolCode:" + data.ProtocolCode);
             sendHandler.AddSendMsg(TcpMessageHandler.PackMessage(sendStr));
-            if (sendClientMsgDic.ContainsKey(data.ProtocolCode))
-            {
-                sendClientMsgDic[data.ProtocolCode].Invoke(data);
-            }
+
         }
 
         public bool IsConnected()
@@ -153,10 +125,7 @@ namespace TcpServer.Servers
             if(data.ProtocolCode!=0)
             UnityEngine.Debug.Log("上面收到的是客户端的消息"+ data.ProtocolCode);
             //  base.OnRevMsg(data);
-            if (revClientMsgDic.ContainsKey(data.ProtocolCode))
-            {            
-                revClientMsgDic[data.ProtocolCode].Invoke(data);
-            }
+           
 
             //接收到消息 事件派发
             NetEventDispatcher.GetInstance().DispatchTcpMsgEvent(data.ProtocolCode, new TcpReceiveEvParam(data, this));
@@ -226,35 +195,6 @@ namespace TcpServer.Servers
        
 
       
-        /// <summary>
-        /// 收到初始数据
-        /// </summary>
-        [NetMsgHandle(NetProtocolCode.INIT_MSG, true)]
-        private void OnRevInitModel(NetData data)
-        {
-           
-            user.initModel = JsonTool.ToObject<InitModel>(data.Msg);
-            UnityEngine.Debug.Log("EquipType ： " + user.initModel.EquipType);
-            user.SeatId = data.SeatId;
-            user.MachineId = data.MachineId;
-        }
-
-
-
-
-
-        #region 向客户端发送消息处理
-        /// <summary>
-        /// 下发登录结果（导控下发的） 处理
-        /// </summary>
-        [NetMsgHandle(NetProtocolCode.LOGIN, false)]
-        private void OnSendLoginRes(NetData data)
-        {
-            LoginModel res = JsonTool.ToObject<LoginModel>(data.Msg);
-            UnityEngine.Debug.Log("登录成功 ： " + res.UserName);
-            user.UserName = res.UserName;
-            user.CarId = res.CarId;
-        }
-        #endregion
+        
     }
 }

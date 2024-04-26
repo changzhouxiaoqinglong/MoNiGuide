@@ -438,58 +438,58 @@ public class NetProtocolCode
     public static readonly List<int> NEED_FORWARD_DEVICE_TO_UNITY = new List<int>()
         {
             //操作毒剂报警器
-            POISON_ALARM_OP,
+            POISON_ALARM_OP,//2011
             //操作辐射仪
-            RADIOME_OP,
+            RADIOME_OP,//2021
             //操作电源
-            POWER_OP,
+            POWER_OP,//2041
               //操作电台
-            RadioStation_OP,
+            RadioStation_OP,//2071
             //操作北斗
-            BEIDOU_OP,
+            BEIDOU_OP,//2051
             //操作气象
-            METEOR_OP,
+            METEOR_OP,//2052
             //操作车载侦毒器
-            OP_CAR_DETECT_POISON,
+            OP_CAR_DETECT_POISON,//2032
             //进样状态
-            POISON_IN_STATUS,
-            SET_RADIOM_RATE_THRESHOLD,
-            SET_TT_RADIOM_RATE_THRESHOLD,
-            SET_CAR_POIS_GAS_TIME,
-            CAR_RADIOM_OP_102,
-            SET_RADIOM_RATE_THRESHOLD_102,
-            SET_TT_RADIOM_TOTAL_102,
-            SET_TT_RADIOM_RATE_THRESHOLD_102,
-            POIS_ALARM_102,
-            PREVENT_DEVICE_PRESS_102,
-            DIFF_PRESSURE_102,
-            PREVENT_DEVICE_RADIOM_102,
-            CAR_MASS_SPECT_102,
-            CAR_MASS_SPECT_SET102,
-            CAR_MASS_SPECT_PRESS_102,
-            INFARED_TELEMETRY_102,
-            INFARED_TELEMETRY_PARAM_102,
-            POWER_102,
-            RadioStation_OP_102,
-            METEOR_102,
-            CAR_WET_TEM,
-            RADIOME_OP_384,
-            SET_RADIOM_RATE_THRESHOLD_384,
-            SET_TT_RADIOM_RATE_THRESHOLD_384,
-            POISON_ALARM_OP_384,
-            POISON_ALARM_WORK_TYPE_384,
-            POWER_OP_384,
-            RadioStation_OP_384,
-            POWER_OP_106,
-            RadioStation_OP_106,
-            SET_SetReliefThreshold,
-            RADIOME_OP_106,
-            SET_RADIOM_RATE_THRESHOLD_106,
-            SET_TT_RADIOM_RATE_THRESHOLD_106,
-            POISON_ALARM_OP_106,
-            Biology_OP_106,
-            SET_Biology_RATE_THRESHOLD_106,
-            POISON_ALARM_STAT_CTR_106,    
+            POISON_IN_STATUS,//7
+            SET_RADIOM_RATE_THRESHOLD,//2022
+            SET_TT_RADIOM_RATE_THRESHOLD,//2023
+            SET_CAR_POIS_GAS_TIME,//2031
+            CAR_RADIOM_OP_102,//10211
+            SET_RADIOM_RATE_THRESHOLD_102,//10212
+            SET_TT_RADIOM_TOTAL_102,//10214
+            SET_TT_RADIOM_RATE_THRESHOLD_102,//10213
+            POIS_ALARM_102,//10221
+            PREVENT_DEVICE_PRESS_102,//10223
+            DIFF_PRESSURE_102,//10222
+            PREVENT_DEVICE_RADIOM_102,//10224
+            CAR_MASS_SPECT_102,//10231
+            CAR_MASS_SPECT_SET102,//10232
+            CAR_MASS_SPECT_PRESS_102,//10233
+            INFARED_TELEMETRY_102,//10241
+            INFARED_TELEMETRY_PARAM_102,//10242
+            POWER_102,//10251
+            RadioStation_OP_102,//10271
+            METEOR_102,//10261
+            CAR_WET_TEM,//10262
+            RADIOME_OP_384,//38411
+            SET_RADIOM_RATE_THRESHOLD_384,//38412
+            SET_TT_RADIOM_RATE_THRESHOLD_384,//38413
+            POISON_ALARM_OP_384,//38421
+            POISON_ALARM_WORK_TYPE_384,//38422
+            POWER_OP_384,//38431
+            RadioStation_OP_384,//38471
+            POWER_OP_106,//10641
+            RadioStation_OP_106,//10671
+            SET_SetReliefThreshold,//10681
+            RADIOME_OP_106,//10621
+            SET_RADIOM_RATE_THRESHOLD_106,//10622
+            SET_TT_RADIOM_RATE_THRESHOLD_106,//10623
+            POISON_ALARM_OP_106,//10611
+            Biology_OP_106,//10631
+            SET_Biology_RATE_THRESHOLD_106,//10632
+            POISON_ALARM_STAT_CTR_106,   //10612
            
         };
 

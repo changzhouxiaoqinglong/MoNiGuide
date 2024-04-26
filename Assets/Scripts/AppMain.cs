@@ -1,6 +1,6 @@
 ﻿using Server.Constant;
 using UnityEngine;
-
+using System;
 public class AppMain : MonoBehaviour
 {
     private void Awake()
@@ -12,6 +12,11 @@ public class AppMain : MonoBehaviour
     void Start()
     {
         NetManager.GetInstance().Init();
+    
+  //   foreach(var a in BitConverter.GetBytes(0x352EF853))
+		//{
+  //          print(a);
+		//}
     }
 
     private void InitConfig()

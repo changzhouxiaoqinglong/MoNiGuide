@@ -153,16 +153,22 @@ namespace TcpServer.Servers
             Debug.Log("收到登录消息");
             if (param is TcpReceiveEvParam tcpParam && tcpParam.client is TcpClient client)
             {
-                LoginModel loginModel = JsonTool.ToObject<LoginModel>(tcpParam.netData.Msg);
+                LoginModelnemaetest loginModel = JsonTool.ToObject<LoginModelnemaetest>(tcpParam.netData.Msg);
                 Debug.Log("收到登录消息: "+ tcpParam.netData.Msg);
                 LoginRes res = new LoginRes()
                 {
-                    UserName = loginModel.UserName,
+                    UserName = loginModel.UserName22,
                 };
-                Debug.Log("登陆成功  用户名：" + loginModel.UserName + "   机号：" + tcpParam.netData.MachineId + "  席位号：" + tcpParam.netData.SeatId);
+                Debug.Log("玩家登陆成功  用户名：" + loginModel.UserName22+ "\r\n"+
+                    "CarId"  +loginModel.CarId+ "\r\n" +
+                    " 密码 " + loginModel.PASSWoRD + "\r\n" +
+                    "   机号：" + tcpParam.netData.MachineId + "\r\n" 
+                    + "  席位号：" + tcpParam.netData.SeatId);
 
-                client.user.UserName = loginModel.UserName;
+                Debug.Log(loginModel.DSA==null);
+                client.user.UserName = loginModel.UserName22;
                 client.user.CarId = loginModel.CarId;
+                
                 // client.user.MachineId = tcpParam.netData.MachineId;
                 //  client.user.SeatId = tcpParam.netData.SeatId;
                 // client.user.initModel = new InitModel { EquipType = (tcpParam.netData.SeatId == 5) ? 2 : 1 };

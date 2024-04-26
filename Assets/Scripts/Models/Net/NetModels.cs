@@ -78,13 +78,16 @@ namespace Server.Models.Net
         public int EquipType;
     }
 
-    public class LoginModel
+    //2边都是c# 序列化时 甚至类名不一样都行
+    public class LoginModelnemaetest
     {
-        public string UserName;
+        public string UserName22;
 
-        public string PassWord;
+        public string PASSWoRD;//对于这些基础变量，名字一样就行 大小写也无所谓
 
         public int CarId;
+
+        public List<float> DSA;//引用类型大小写也无所谓 名字不一样就行则为null
     }
 
     public class LoginRes : ResBase
