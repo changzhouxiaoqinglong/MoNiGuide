@@ -37,6 +37,11 @@ public class TaskEnvData
     public int TrainId;
 
     /// <summary>
+    /// 训练类型1.操作2.协同3.战术
+    /// </summary>
+    public int TaskType;
+
+    /// <summary>
     /// 模式 0.单机  1.考核  2.训练
     /// </summary>
     public int CheckType;
@@ -59,22 +64,22 @@ public class TaskEnvData
     /// <summary>
     /// 风向
     /// </summary>
-    public int WindDir;
+   // public int WindDir;
 
     /// <summary>
     /// 风速
     /// </summary>
-    public int WindSp;
+    //public int WindSp;
 
     /// <summary>
     /// 温度
     /// </summary>
-    public int Temperate;
+    //public int Temperate;
 
     /// <summary>
     /// 湿度
     /// </summary>
-    public int Humidity;
+    //public int Humidity;
 
     /// <summary>
     /// 车型编号

@@ -289,12 +289,13 @@ public class TaskPanel : MonoBehaviour
         {
             TaskId = TaskDataMgr.GetInstance().dataList[taskDropDown.value].Id,
             Scene = SceneDataMgr.GetInstance().dataList[sceneDropDown.value].Id,
+           // TaskType=3,
           //  Weather = WeatherDataMgr.GetInstance().dataList[weatherDropDown.value].Id,
-           // WindDir = winDir.text.ToInt(),
-           // WindSp = winSp.text.ToInt(),
-           // Temperate = temperate.text.ToInt(),
+          // WindDir = winDir.text.ToInt(),
+          // WindSp = winSp.text.ToInt(),
+          // Temperate = temperate.text.ToInt(),
           //  Humidity = wet.text.ToInt(),
-            //CardPos = carVect,
+          //CardPos = carVect,
             TrainId = trainId.text.ToInt(),
             CheckType = modeDropDown.value,
             Time = DateTime.Now.ToString("yyyyMMddHHmmss"),
@@ -307,7 +308,7 @@ public class TaskPanel : MonoBehaviour
                 Humidity = wet.text.ToInt(),
             },
         };
-        //print(SceneDataMgr.GetInstance().dataList[sceneDropDown.value].Id);
+        print(winDir.text.ToInt());
         print(WeatherDataMgr.GetInstance().dataList[weatherDropDown.value].Id);
         foreach (var item in drugDatas)
         {
@@ -316,7 +317,7 @@ public class TaskPanel : MonoBehaviour
             harmData.Content = JsonTool.ToJson(item);
             taskEnvData.HarmDatas.Add(harmData);
         }
-        print(drugDatas.Count);
+        print("毒数量"+drugDatas.Count);
         foreach (var item in fuSheDatas)
         {
             HarmData harmData = new HarmData();
@@ -324,8 +325,8 @@ public class TaskPanel : MonoBehaviour
             harmData.Content = JsonTool.ToJson(item);
             taskEnvData.HarmDatas.Add(harmData);
         }
-        print(fuSheDatas.Count);
-        print(CraterDatas.Count);
+        print("辐射数量" + fuSheDatas.Count);
+        print("坑数量" + CraterDatas.Count);
         taskEnvData.CraterDatas = CraterDatas;
         NetManager.GetInstance().server.SendMsgToAll(JsonTool.ToJson(taskEnvData), NetProtocolCode.TASK_ENV);
     }

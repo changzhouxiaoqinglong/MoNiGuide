@@ -83,7 +83,9 @@ namespace TcpServer.Servers
             string sendStr = JsonTool.ToJson(data);
             if(data.ProtocolCode!=0)
            Logger.LogDebug("SendMsg:" + sendStr);
-           // Logger.LogWarning("SendMsg ProtocolCode:" + data.ProtocolCode);
+            if (data.ProtocolCode == 10671)
+                Logger.LogDebug("转发deviceSendMsg:" + sendStr);
+            // Logger.LogWarning("SendMsg ProtocolCode:" + data.ProtocolCode);
             sendHandler.AddSendMsg(TcpMessageHandler.PackMessage(sendStr));
 
         }
@@ -181,8 +183,8 @@ namespace TcpServer.Servers
                     //需要转发设备管理软件消息 给 车上的三维软件
                     if (NetProtocolCode.IsNeedForwardDeviceToUnity(data.ProtocolCode))
                     {
-                        if (data.ProtocolCode == 10241)
-                            Logger.LogWarning("遥测");
+                        //if (data.ProtocolCode == 10241)
+                       //     Logger.LogWarning("遥测");
                         server.DeviceForwardUnity(data);
                     }
                 }

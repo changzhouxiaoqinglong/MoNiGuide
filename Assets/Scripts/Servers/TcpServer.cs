@@ -305,6 +305,7 @@ namespace TcpServer.Servers
         public void SendMsgToClient(NetData data, int MachineId, int SeatId = 0, int equipType = -1, TcpClient exceptClient = null)
         {
             Debug.Log("SendMsgToClient");
+          //  if(data.ProtocolCode==2041) Debug.Log(SeatId);
             //要指定机号和席位号转发
             if (MachineId > 0)
             {

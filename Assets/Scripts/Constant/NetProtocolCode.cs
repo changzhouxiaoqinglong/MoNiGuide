@@ -437,9 +437,9 @@ public class NetProtocolCode
     /// </summary>
     public static readonly List<int> NEED_FORWARD_DEVICE_TO_UNITY = new List<int>()
         {
-            //操作毒剂报警器
+            //操作02b毒剂报警器
             POISON_ALARM_OP,//2011
-            //操作辐射仪
+            //操作02b辐射仪
             RADIOME_OP,//2021
             //操作电源
             POWER_OP,//2041
